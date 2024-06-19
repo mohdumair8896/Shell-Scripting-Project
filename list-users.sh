@@ -1,10 +1,12 @@
 #!/bin/bash
 
+helper()
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
 # GitHub username and personal access token 
-# For $username, $token credential, it will take it from terminal
+# For $username, $token credential, it will take it from the terminal
 USERNAME=$username
 TOKEN=$token
 
@@ -37,6 +39,11 @@ function list_users_with_read_access {
     fi
 }
 
+function helper{
+expected_cmd0_args=2
+if [ $# -ne $expected_cmd0_args]; then
+ echo "Please execute the script with required cmd args"
+ }
 # Main script
 
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
